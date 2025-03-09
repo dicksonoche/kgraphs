@@ -2,16 +2,16 @@ import neo4j, { Driver, Session } from 'neo4j-driver';
 import {
   type AcademicField, type Course, type Lesson,
   type Paper, type Journal
-} from '../../shared/shema';
+} from '../../shared/schema';
 
 export class Neo4jService {
   private driver: Driver;
   private isConnected: boolean = false;
 
   constructor() {
-    const uri = process.env.NEO4J_URI;
-    const user = process.env.NEO4J_USER;
-    const password = process.env.NEO4J_PASSWORD;
+    const uri = "neo4j+s://19ade1e9.databases.neo4j.io";
+    const user = "neo4j";
+    const password = "D9sdsnBUH6XHlkwftVuPgv_7P0-wpDnmE0nA5avG4uM";
 
     if (!uri || !user || !password) {
       throw new Error('Missing Neo4j credentials. Please set NEO4J_URI, NEO4J_USER, and NEO4J_PASSWORD environment variables.');
